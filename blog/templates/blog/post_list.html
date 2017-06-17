@@ -1,12 +1,21 @@
 <html>
     <head>
+
         <title>Gosia's blog</title>
+        
     </head>
     <body>
-        <h1>Welcome to my blog!</h1> 
-        <h2>I hope you like cats!</h2>
-        <p>Cats are the <em>best</em> animals ever! <br />
-        <ul><li>they are fluffy</li><li>they purrrr</li><li>they kill spiders!</li></ul>
-        </p>
+        <div>
+            <h1>Welcome to my blog!</h1> 
+        </div>
+        
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+        
     </body>
 </html>
